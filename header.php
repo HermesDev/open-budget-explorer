@@ -28,13 +28,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">City of Philadelphia</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
-                </ul>
+                <a class="navbar-brand" href="/">City of Albuquerque - <span class="open-budget-title">Open Budget Explorer</span></a>
             </div>
         </div>
     </nav>
