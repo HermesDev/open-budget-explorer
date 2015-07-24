@@ -1,27 +1,25 @@
 <!DOCTYPE html>
-<html lang="">
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="City of Philadelphia | Data Services">
+
     <title>City of Philadelphia | Budget Explorer</title>
     <link rel="shortcut icon" href="index.html">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<!--    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
-<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">-->
 
     <link rel="stylesheet" type="text/css" href="css/dc.css"/>
     <link rel="stylesheet" type="text/css" href="css/budget.css"/>
-<!--    <script src="js/d3.min.js" charset="utf-8"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <!--[if IE]>
+    <!--[if lte IE]>
         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-<script src="js/aight.min.js"></script>
     <![endif]-->
 </head>
 
@@ -42,16 +40,14 @@
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
-<!--                    <li><a href="#contact">Data Inventory</a></li>-->
                 </ul>
-            </div><!--.nav-collapse-->
+            </div>
         </div>
     </nav>
     <div class="container">
         <div id="budget-header">
             <img src="img/new_city_logo_grey.png" alt="city logo" class="logo-img">
             <p><span class="city-title">Open Budget  </span><span class="app-name">Explorer</span></p>
-<!--                <p class="lead">This little guy is just a test. Select a department to see how their budget breaks down.</p>-->
         </div>
 
 <!--    BEGIN VISUALIZATION MAIN    -->
@@ -73,7 +69,6 @@
                     <div>
                         <div style="text-align: center;">of</div>
                         <span style class="budget-total">$7,186,474,597</span><br>
-<!--                            <span class="total-selected">total</span>-->
                     </div>
                 </div>
             </div>
@@ -109,7 +104,8 @@
                 </section>
             </div>
         </div>
-     <!-- create a custom header -->
+        
+        <!-- create a custom header -->
         <div id="data-table" class="row">
             <section id="data-count">
                 <span class="filter-count"></span> selected out of
