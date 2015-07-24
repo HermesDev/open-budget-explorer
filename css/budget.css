@@ -11,6 +11,15 @@ body {
     padding-top:80px;
 }
 
+footer {
+    width: 100%;
+    position: fixed; 
+    bottom: 0; 
+    background-color: rgba(146, 153, 165, 1);
+/*    -webkit-filter: blur(5px);
+            filter: blur(5px);*/
+}
+
 p {
     font-family: 'open sans', sans-serif;
     color: #54585A;
@@ -252,6 +261,13 @@ tr.header {
     color: grey;
 }
 
+.real-time-total {
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+    height: 80px;
+}
+
 #chart-number-total {
     float: left;
     width: 100%%;
@@ -267,16 +283,14 @@ tr.header {
     left: 21%;
 }
 
-.number-display {
+.number-display,
+.budget-total {
     font-family: 'georgia', serif;
-    font-size: 34px;
+    font-size: 20px;
     color: #008cba;
 }
 
 .budget-total {
-    font-family: 'georgia', serif;
-    font-size: 34px;
-    color: #008cba;
     margin: 0px auto;
 }
 
@@ -288,11 +302,7 @@ tr.header {
 
 #chart-ring-budget {
     margin-left: 70px;
-    position:relative;
-}
-
-#info {
-    padding-bottom: 40px;
+    position: relative;
 }
 
 #row-charts {
