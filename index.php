@@ -42,10 +42,11 @@
     </div>
     <div id="row-charts" class="row">
         <div id="department" class="col-xs-4">
-            <hr><p span class="section-title">Choose a Department <span class="glyphicon glyphicon-question-sign"></span><hr>
+            <hr>
+            <p span class="section-title">Choose a Department <span class="glyphicon glyphicon-question-sign"></span>
+            <hr>
             </p>
-            <section id="chart-row-dept">
-            </section>
+            <section id="chart-row-dept"></section>
         </div>
         <div id="funding" class="col-xs-4">
             <section id="chart-row-fund"><hr>
