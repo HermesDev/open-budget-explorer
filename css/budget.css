@@ -1,10 +1,16 @@
 @import url('//fonts.googleapis.com/css?family=Montserrat:200,300,400,700|Open+Sans:400,700|Open+Sans+Condensed:300,700');
 
+/***********************
+
+    Basic tags
+
+ ***********************/
 body {
-font-family: 'Montserrat', 'Open Sans', sans-serif;
-font-weight: normal;
-padding-top:80px;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-weight: normal;
+    padding-top:80px;
 }
+
 p {
     font-family: 'open sans', sans-serif;
     color: #54585A;
@@ -26,7 +32,8 @@ ol {
     font-weight: bold;
 }
 
-.starter-template {             padding: 40px 15px;
+.starter-template {             
+    padding: 40px 15px;
     text-align: center;
 }
 
@@ -39,7 +46,6 @@ ol {
     width: 50%;
     margin-top:20px;
     z-index: -3;
-/*    border: 1px dotted #d9d9d6; */
 }
 
 .navbar-brand {
@@ -55,7 +61,6 @@ ol {
 }
 
 .section-title {
-/*    text-transform: uppercase;*/
     font-family: 'georgia',serif;
     font-size: 22px;
     margin-top: -20px;
@@ -92,14 +97,13 @@ ol {
     font-weight: 500;
     color: #008cba;
     letter-spacing: 4px;
-    /* border: 1px dotted #d9d9d6; */
 }
 
 .three-col {
-       -moz-column-count: 3;
-       -moz-column-gap: 20px;
-       -webkit-column-count: 3;
-       -webkit-column-gap: 20px;
+   -moz-column-count: 3;
+   -moz-column-gap: 20px;
+   -webkit-column-count: 3;
+   -webkit-column-gap: 20px;
 }
 
 .btn-primary {
@@ -110,6 +114,7 @@ ol {
     font-size: 10px;
 }
 
+/* basic link */
 a:link {
     color:#FFF;
 }
@@ -153,13 +158,14 @@ a:visited {
     font-size: 11px;
     text-transform: uppercase;
 }
+
 .dc-chart text.pie-slice {
     fill: #dbe1e3;
     font-size: 10px;
     text-transform: uppercase;
 }
+
 .dc-chart g.row rect {
-/*    fill: #008cba;*/
     fill-opacity: 0.6;
 }
 
@@ -182,7 +188,7 @@ tr.header {
 .dc-data-table {
     font-weight: 200;
     fill: #54585A;
-    }
+}
 
 .dc-table-label {
     background-color: #D9D9D6;
@@ -197,9 +203,6 @@ tr.header {
 .dc-chart {
     fill: gray;
     font-size: 10px;
-/*    text-transform: uppercase;*/
-
-/*    display: block;*/
 }
 
 .filter-count {
@@ -221,7 +224,6 @@ tr.header {
 }
 
 #data-count-top {
-/*     border: 1px dotted #d9d9d6; */
     float: right;
     text-align: right;
     width: 40%;
@@ -241,7 +243,6 @@ tr.header {
 }
 
 .center {
-
     text-align: center;
     width: 100%;
 }
@@ -255,8 +256,8 @@ tr.header {
     float: left;
     width: 100%%;
     position: relative;
-    /* border: 1px dotted #d9d9d6; */
 }
+
 #total-percent {
     font-family: 'georgia', serif;
     font-size: 34px;
@@ -264,9 +265,6 @@ tr.header {
     position: absolute;
     top: 38%;
     left: 21%;
-}
-
-.summary {
 }
 
 .number-display {
@@ -283,21 +281,14 @@ tr.header {
 }
 
 .total-selected {
-/*    font-family: 'georgia', serif!important;*/
     font-size: 22px;
     color: #54585A;
     text-transform: uppercase;
-/*    margin-bottom:-40px;*/
 }
 
 #chart-ring-budget {
-/*    margin: 0px auto;*/
-    /* border: 1px dotted #d9d9d6; */
     margin-left: 70px;
     position:relative;
-}
-
-#info-box-dept {
 }
 
 #info {
@@ -316,9 +307,6 @@ tr.header {
     text-align: right;
 }
 
-#data-table {
-}
-
 #chart-row-dept {
     height: 500px;
     width: 100%;
@@ -329,18 +317,11 @@ g.tick {
     display:none;
 }
 
-#chart-row-fund {
-}
-
-#chart-bar-char {
-}
-
 #chart-table-activity {
     height: 600px;
     margin-top: 16px;
     font-family: 'open sans', sans-serif;
     font-size: 13px;
-/*    font-weight:lighter;*/
     overflow-y: scroll;
     display: table;
 }
