@@ -6,7 +6,8 @@ var dataCountTop    = dc.dataCount("#data-count-top"),
     actTableChart   = dc.dataTable("#chart-table-activity"),
     numberTotal     = dc.numberDisplay("#chart-number-total"),
     charBarChart    = dc.rowChart("#chart-bar-char"),
-    fundRowChart    = dc.rowChart("#chart-row-fund");
+    fundRowChart    = dc.rowChart("#chart-row-fund"),
+    currentPercent  = dc.numberDisplay('#current-percent');
 
 // LOAD OUR DATA
 var myData = d3.csv('data/14budget.csv', function(budgetData){
@@ -33,14 +34,19 @@ var myData = d3.csv('data/14budget.csv', function(budgetData){
     var formatRight = d3.format(' >$,.0f');
     var min                 = budgetDim.bottom(1)[0].budget,
         max                 = budgetDim.top(1)[0].budget;
-    console.log(min);
-    console.log(max);
-
+    
+    
     //TODO dynamic dept title renderal
     //TODO calc % YoY change
     numberTotal
         .formatNumber(d3.format(" ^$,.r"))
         .valueAccessor(function(d) {return sumAll.value();})
+        .group(spendPerDeptDim);
+
+    // percent
+    currentPercent
+        .formatNumber(d3.format("."))
+        .valueAccessor(function(d) {return (sumAll.value() * 100 / 7186474597).toFixed(1);})
         .group(spendPerDeptDim);
 
     budgetRingChart
