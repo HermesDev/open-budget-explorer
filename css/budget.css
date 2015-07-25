@@ -171,8 +171,13 @@ a:visited {
 }
 
 .dc-chart rect {
-    fill: rgb(255, 199, 115);
+    fill: rgb(255, 139, 17);
     fill-opacity: 0.5;
+}
+
+.dc-chart rect.deselected {
+    fill: rgb(255, 199, 115);
+    fill: rgb(247, 220, 179);
 }
 
 .axis text line {
@@ -200,11 +205,6 @@ tr.header {
 .dc-table-row {
     padding-left: 20px;
 }
-
-/*.dc-chart {
-    fill: gray;
-    font-size: 10px;
-}*/
 
 .filter-count {
     font-size: 14px;
@@ -255,7 +255,7 @@ tr.header {
 
  ***********************/
 footer .label-right {
-    background-color: rgba(42, 112, 150, 1);
+    background-color: rgba(0, 79, 110, 1);
     font-family: 'Josefin Sans', sans-serif;
     color: white;
     position: fixed;
@@ -284,6 +284,7 @@ footer .label-right:nth-child(3) {
 
 footer .label-right:nth-child(4) {
     bottom: 40px;
+    background-color: rgba(42, 112, 150, 1);
 }
 
 .total-selected {

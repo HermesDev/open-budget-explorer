@@ -1,10 +1,5 @@
 	<footer>
 		
-
-		<div class="label-right">
-			<a onclick="dc.filterAll();dc.redrawAll();">Reset Filters</a>
-		</div>
-
 		<div class="label-right">
 			<span id="current-percent"></span>%
 		</div>	
@@ -15,6 +10,10 @@
 
 		<div class="label-right">
 			<span class="budget-total"> of $7,186,474,597</span>
+		</div>
+
+		<div class="label-right">
+			<a onclick="dc.filterAll();dc.redrawAll();">Reset Filters</a>
 		</div>
 
 	</footer>
