@@ -1,30 +1,31 @@
 	<footer>
-		<div class="container">
-			<div class="row" id="info">
-				<!-- <div id="data-count-top">
+
+		<div class="real-time-total-wrapper">
+			<div class="real-time-total">
+				<div class="total-selected">Total Selected</div>
+				<div id="chart-number-total">
+					<span class="number-display"></span>
+					<span> of </span>
+					<span class="budget-total">$7,186,474,597</span><br>
+				</div>
+				<span id="reset-all">
+					<button type="button" class="btn btn-primary btn-xs"><a href="javascript:dc.filterAll();dc.redrawAll();">Reset Filters</a></button>
+				</span>
+			</div><!-- end real-time-total -->
+		</div><!-- end real-time-total-wrapper -->
+
+		<div class="chart-ring-wrapper">
+			<div id="chart-ring-budget"></div>
+			<div class="total-percent">100%</div>
+		</div>
+
+			<!-- <div class="row" id="info">
+				<div id="data-count-top">
 					<span class="filter-count"></span> selected out of <span class="total-count"></span> records &nbsp;
-					<span id="reset-all">
-						<button type="button" class="btn btn-primary btn-xs"><a href="javascript:dc.filterAll();dc.redrawAll();">Reset Filters</a></button>
-					</span>
-				</div> -->
-				<div class="col-xs-4">
-					<div class="real-time-total">
-						<div class="total-selected">Total Selected</div>
-						<div id="chart-number-total">
-							<span class="number-display"></span>
-							<span> of </span>
-							<span class="budget-total">$7,186,474,597</span><br>
-						</div>
-					</div><!-- end real-time-total -->
+					
 				</div>
-				<div id="ring-total" class="col-xs-4">
-					<section id="chart-ring-budget">
-						<section id="total-percent">100%</section>
-					</section>
-					<p id="comment">^ring will update to show % of whole</p>
-				</div>
-			</div><!-- end info -->
-		</div><!-- end container -->
+				
+			</div> -->
 	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>

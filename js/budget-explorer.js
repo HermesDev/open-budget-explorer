@@ -44,12 +44,12 @@ var myData = d3.csv('data/14budget.csv', function(budgetData){
         .group(spendPerDeptDim);
 
     budgetRingChart
-        .width(160).height(160)
+        .width(150).height(150)
         .dimension(fundDim)
         .group(spendPerFundDim)
         .colors(['#A8BF12'])
         .renderLabel(false)
-        .innerRadius(70);
+        .innerRadius(50);
 
     deptRowChart
         .width(340).height(1100)

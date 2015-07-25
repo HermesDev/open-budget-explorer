@@ -261,20 +261,34 @@ tr.header {
     color: grey;
 }
 
-.real-time-total {
+.real-time-total-wrapper {
     position: fixed;
     bottom: 0;
-    z-index: 20;
-    height: 80px;
+    left: 0;
+    height: 160px;
+    width: 360px;
+    background-image: url(../img/left-bottom-display-flat-color.png);
+}
+
+.real-time-total {
+    position: relative;
+    left: 10px;
+    top: 80px;
+}
+
+.total-selected {
+    font-size: 20px;
+    color: #54585A;
+    text-transform: uppercase;
 }
 
 #chart-number-total {
     float: left;
-    width: 100%%;
+    width: 100%;
     position: relative;
 }
 
-#total-percent {
+.total-percent {
     font-family: 'georgia', serif;
     font-size: 34px;
     color: #008cba;
@@ -286,7 +300,7 @@ tr.header {
 .number-display,
 .budget-total {
     font-family: 'georgia', serif;
-    font-size: 20px;
+    font-size: 18px;
     color: #008cba;
 }
 
@@ -294,15 +308,25 @@ tr.header {
     margin: 0px auto;
 }
 
-.total-selected {
-    font-size: 22px;
-    color: #54585A;
-    text-transform: uppercase;
+.chart-ring-wrapper {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 240px;
+    width: 520px;
+    background-image: url(../img/right-bottom-display-flat-color.png);
 }
 
-#chart-ring-budget {
-    margin-left: 70px;
+.chart-ring-wrapper > * {
     position: relative;
+    top: 30%;
+    left: 68%;
+}
+
+.total-percent {
+    position: absolute;
+    top: 120px;
+    left: 74.4%;
 }
 
 #row-charts {
