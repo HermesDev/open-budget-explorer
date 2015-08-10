@@ -168,7 +168,8 @@ function createInitialPieContent() {
 	// so we use the mapping to work around this problem
 	var content = [];
 	for(var i = 0; i < 8; i++) {
-		content.push({"value": data[mapping[i].e].total, "label": data[mapping[i].e].department});
+		// content.push({"value": data[mapping[i].e].total, "label": data[mapping[i].e].department});
+		content.push({"value": data[mapping[i].e].total, "label": ''});
 	}
 	return content;
 }
@@ -201,7 +202,8 @@ function createPieObject(title, content, onClickCallback) {
 function createZoomedPieContent(index) {
 	var content = [];
 	for(var i = mapping[index].s; i < mapping[index].e; i++) {
-		content.push({"value": data[i].total, "label": data[i].department});
+		// content.push({"value": data[i].total, "label": data[i].department});
+		content.push({"value": data[i].total, "label": ''});
 	}
 	return content;
 }
@@ -235,6 +237,12 @@ function showSelected(selected) {
 function zoomOnSegment(index) {
 	var content = createZoomedPieContent(index);
 	var title = data[mapping[index].e].department;
+	// var pieChartPrefix = '#p1_';
+	// var position = {
+	// 	x: d3.select(pieChartPrefix + 'title').attr('x'),
+	// 	dy: '1.2em'
+	// };
+	// var title = formatSegmentHtml(previous.index, position);
 	var pieObject = createPieObject(title, content, showSegmentInfo);
 	currentPie = new d3pie('zoomPieChart', pieObject);
 }

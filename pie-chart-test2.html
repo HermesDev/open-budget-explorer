@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+
+  body {
+    font: 10px sans-serif;
+  }
+
+  .arc path {
+    stroke: #fff;
+  }
+
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div id="chart" class="col-sm-12"></div>
+  </div>  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script>
+
+var GOALS_CSV = 'data/2015-goals.csv';
+
+var width = 100,
+    height = 100,
+    radius = Math.min(width, height) / 2;
+
+// var color = d3.scale.category20();
+// var color = d3.scale.ordinal()
+//     .ranges(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00", '#b36200']);
+
+var arc = d3.svg.arc()
+    // the only difference with a regular piechart is that you set the innerRadius to 0
+    .innerRadius(radius - 25) 
+    .outerRadius(radius - 5);
+
+var pie = d3.layout.pie()
+    .sort(null)
+    .value(function(d) { return d.total; });
+
+var svg = d3.select("#chart")
+    .append("svg")
+    .attr("viewBox", "0 0 100 100")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+
+d3.csv(GOALS_CSV, function(error, data) {
+
+  var finalTotal = d3.sum(data, function(d){ return d.total; });
+  var totals = [];
+
+
+  data.forEach(function(d) {
+    d.total = +d.total;
+    totals.push(d.total);
+  });
+
+  // data.sort(function(a,b) {return b.total - a.total;});
+
+  var color = d3.scale.linear()
+  .domain([0, d3.max(totals)])
+  .range(['#ffb832', '#c61c6f']);
+
+  // var color = d3.scale.linear()
+  // .domain([d3.min(totals), d3.mean(totals), d3.max(totals)])
+  // .range(["green", "yellow", "red"]);
+
+  // color.domain(totals);
+
+  // var g = svg.selectAll(".arc")
+  //     .data(pie(data))
+  //   .enter().append("g")
+  //     .attr("class", "arc");
+
+  var path = svg.selectAll("path")
+      .data(pie(data))
+    .enter().append("path")
+      // .attr("fill", function(d, i) { return color(d.data.total); })
+      .style("fill", function(d) { return color(d.data.total); })
+      .attr("d", arc)
+      .attr('id', function(d, i) { return 'path-' + i; })
+      .on('click', function(d,i) {
+        resetPosition('#path-', data, 200);
+        resetPosition('#label-', data, 200);
+        translateSelection('#path-' + i, arcCentroid(d), 200);
+        translateSelection('#label-' + i, arcCentroid(d), 200);
+      });
+
+  svg.selectAll('text')
+    .data(pie(data))
+    .enter().append("text")
+      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+      .attr("dy", ".35em")
+      .attr('id', function(d, i) { return 'label-' + i; })
+      .style("text-anchor", "middle")
+      .style('fill', 'white')
+      .style('font-size', '.12em')
+      .text(function(d) { return d3.round(100 * d.data.total / finalTotal, 1) + '%'; })
+
+});
+
+/**
+ * translateSelection translate the d3 selected arc
+ * @param  object selection the d3 selection object
+ * @param  object centroid  the centroid of the arc
+ * @param  int    duration  the duration of the transition in milliseconds
+ */
+function translateSelection(selection, centroid, duration) {
+  var selected = d3.select(selection);
+  if(selected.attr('transform')) {
+    // split everything which is not alphanum characters - or . 
+    // (g for repeat and i for case insensitive)
+    var t = selected.attr('transform').split(/[^\w-.]/gi),
+        origin = { x: parseFloat(t[1]), y: parseFloat(t[2]) };
+  } else {
+    var origin = { x: 0, y: 0 };
+  }
+  selected
+    .transition()
+    .duration(duration)
+    .attr('transform', 'translate(' + (origin.x + centroid.x / 20) + ',' + (origin.y + centroid.y / 20) + ')');
+}
+
+/**
+ * centroid get the centroid as an object
+ * @param  object d the current data object
+ * @return object   the centroid object | props: x and y
+ */
+function arcCentroid(d) {
+  var c = arc.centroid(d);
+  return { x: c[0], y: c[1] };
+}
+
+/**
+ * resetPosition reset the position of all arcs
+ * @param  object selection the d3 selection object
+ * @param  object data     the data object (csv)
+ * @param  int    duration the duration of the transition
+ */
+function resetPosition(selection, data, duration) {
+  for(var i = 0; i < data.length; i++) {
+    var selected = d3.select(selection + i);
+    
+    selected
+      .transition()
+      .duration(duration)
+      .attr('transform', 'translate(0,0)');        
+  }
+}
+
+</script>
+</body>
+</html>
