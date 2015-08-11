@@ -33,7 +33,7 @@ var pie = d3.layout.pie()
     .sort(null)
     .value(function(d) { return d.population; });
 
-d3.csv("pie-chart-multiple-data.csv", function(error, data) {
+d3.csv("data/pie-chart-multiple-data.csv", function(error, data) {
   if (error) throw error;
 
   // get keys of the first row and apply a filter: get rid of State
